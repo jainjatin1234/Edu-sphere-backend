@@ -16,7 +16,12 @@ const app = express();
 //   allowedHeaders: ["Content-Type", "Authorization", "Cookie"], // Include Cookie in allowed headers
 // };
 
-app.use(cors());
+app.use(
+  cors({
+    origin: "https://learn-sphere-learnsphere.netlify.app", // Replace with your frontend URL
+    credentials: true, // Allow cookies and authentication headers
+  })
+);
 
 dotenv.config({ path: ".env" });
 
