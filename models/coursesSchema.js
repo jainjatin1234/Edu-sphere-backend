@@ -40,11 +40,11 @@ const itemSchema = new mongoose.Schema({
 
 const courseSchema = new mongoose.Schema(
   {
-    // id: {
-    //   type: Number,
-    //   required: [true, "Course ID is required"],
-    //   unique: true,
-    // },
+    id: {
+      type: Number,
+      required: [true, "Course ID is required"],
+      unique: true,
+    },
     title: {
       type: String,
       required: [true, "Course title is required"],
