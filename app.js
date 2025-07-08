@@ -9,14 +9,15 @@ import connection from "./utils/db.js";
 
 const app = express();
 
-// const corsOptions = {
-//   origin: "http://localhost:5173", // Make sure this is the correct frontend URL
-//   methods: ["GET", "POST", "PUT", "DELETE"], // You can expand this if needed
-//   credentials: true, // Make sure to allow credentials (cookies)
-//   allowedHeaders: ["Content-Type", "Authorization", "Cookie"], // Include Cookie in allowed headers
-// };
+app.use(
+  cors({
+      origin: "http://localhost:5173", // Allow frontend origin
+      credentials: true, // Allow credentials (cookies, auth headers, etc.)
+      methods: ["GET", "POST", "PUT", "DELETE"], // Allowed methods
+      allowedHeaders: ["Content-Type", "Authorization"], // Allowed headers
+  })
+);
 
-app.use(cors());
 
 dotenv.config({ path: ".env" });
 

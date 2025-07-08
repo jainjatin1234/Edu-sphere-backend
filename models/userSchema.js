@@ -6,7 +6,7 @@ const userSchema = new mongoose.Schema({
         required: [true, 'Username is required'],
         unique: true, // Ensure the username is unique
         trim: true,
-        minlength: [3, 'Username must be at least 3 characters long'],
+      
       },
       email: {
         type: String,
@@ -24,7 +24,7 @@ const userSchema = new mongoose.Schema({
           ref: 'Course', // Reference the "Course" model
         },
       ],
-    }, {
+    }, {  
       timestamps: true,  // Automatically add `createdAt` and `updatedAt` fields
     }
 );

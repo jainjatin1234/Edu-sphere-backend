@@ -70,7 +70,7 @@ const courseSchema = new mongoose.Schema(
     items: {
       type: [itemSchema],
       default: [],
-    },
+    },   
   },
   {
     timestamps: true, // Automatically adds `createdAt` and `updatedAt` fields
