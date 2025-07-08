@@ -9,15 +9,8 @@ import connection from "./utils/db.js";
 
 const app = express();
 
-app.use(
-  cors({
-      origin: "http://localhost:5173", // Allow frontend origin
-      credentials: true, // Allow credentials (cookies, auth headers, etc.)
-      methods: ["GET", "POST", "PUT", "DELETE"], // Allowed methods
-      allowedHeaders: ["Content-Type", "Authorization"], // Allowed headers
-  })
-);
 
+app.use(cors());
 
 dotenv.config({ path: ".env" });
 
@@ -32,7 +25,7 @@ app.use("/user/v2", userRouter);
 app.use("/course/v2", courseRouter);
 
 app.get("/", (req, res) => {
-  res.send("hello");
+  res.send("hellos jnckjkj");
 });
 
 app.get("/cookie", (req, res) => {
@@ -44,3 +37,4 @@ app.listen(process.env.PORT, () => {
   console.log(`server is running`);
 })
 export default app;
+
