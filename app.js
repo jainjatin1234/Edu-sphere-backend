@@ -10,8 +10,10 @@ import connection from "./utils/db.js";
 const app = express();
 
 
-app.use(cors());
-
+app.use(cors({
+  origin: 'https://learn-sphere-learnsphere.netlify.app',  // ✅ Set exact frontend origin
+  credentials: true                                         // ✅ Allow credentials
+}));
 dotenv.config({ path: ".env" });
 
 app.use(express.json());
